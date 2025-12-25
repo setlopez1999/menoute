@@ -5,12 +5,12 @@ class AppLocale {
   AppLocale(this.languageCode);
   static final Map<String, Map<String,String>> _texts ={
     'es':{
-      'title':'Notas',
+      'title':'MeNouts',
       'add_note':'Agregar nota',
       'empty':'No hay notas',
     },
     'en':{
-      'title':'Notes',
+      'title':'MeNouts',
       'add_note':'Add note',
       'empty':'No notes yet',
     },

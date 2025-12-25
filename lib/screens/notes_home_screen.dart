@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menouts/core/locale/app_locale.dart';
 import 'package:menouts/core/locale/locale_provider.dart';
+import 'package:menouts/core/notes/notes_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../core/theme/theme_provider.dart';
@@ -13,6 +14,7 @@ class NotesHomeScreen extends StatelessWidget {
     final themeProvider = context.read<ThemeProvider>();
     final locale = context.watch<LocaleProvider>().locale;
     final texts = AppLocale(locale.languageCode);
+    final notesProvider = context.watch<NotesProvider>();
 
     return Scaffold(
       appBar: AppBar(
@@ -39,7 +41,7 @@ class NotesHomeScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text(texts.empty),
+        child: Text(texts.empty, style: Theme.of(context).textTheme.headlineSmall,),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

@@ -6,6 +6,7 @@ import 'core/theme/app_theme.dart';
 import 'core/theme/theme_provider.dart';
 //import 'core/locale/app_locale.dart';
 import 'core/locale/locale_provider.dart';
+import 'core/notes/notes_provider.dart';
 
 import 'screens/notes_home_screen.dart';
 
@@ -15,6 +16,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_)=> ThemeProvider()),// Haciendo que todos los widgets hijos puedan acceder a el
         ChangeNotifierProvider(create: (_)=> LocaleProvider()),
+        ChangeNotifierProvider(create: (_)=> NotesProvider()),
       ],
       child: const MyApp(),//Como esta en Myapp(Toda mi app la puede usar) 
     ),//ver Theme_Provider.dart ln.11
