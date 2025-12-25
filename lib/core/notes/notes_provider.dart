@@ -8,8 +8,19 @@ class NotesProvider extends ChangeNotifier{
   List<Note> get notes => _notes;
   bool get isEmpty => _notes.isEmpty;
 
+  //Crear Nota
   void addNote(Note note) {
     _notes.add(note);
     notifyListeners();
   }
+  //Mostrar Nota
+  //Actualizar Nota
+  void updateNote(Note updateNota){
+    final index = _notes.indexWhere((n) => n.id == updateNota.id);
+    if(index != -1){
+      _notes[index] = updateNota;
+      notifyListeners();
+    }
+  }
+  //Borrar Nota
 }
