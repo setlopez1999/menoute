@@ -17,7 +17,7 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       drawer: const DrawerMenu(),
       appBar: AppBar(
-        title: const Text('Ajustes'),
+        title: Text('Ajustes', style: Theme.of(context).textTheme.headlineSmall,),
       ),
       body: ListView(
         children: [

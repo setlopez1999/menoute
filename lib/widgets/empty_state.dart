@@ -9,7 +9,9 @@ class EmptyState extends StatelessWidget{
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.headlineSmall,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.onPrimary,
+          fontSize: 18),
       ),
     );
   }

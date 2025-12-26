@@ -17,7 +17,7 @@ class NotesList extends StatelessWidget{
           //padding solo vertical
           contentPadding: EdgeInsets.all(15.0),
           //ahora margen
-          hoverColor: Theme.of(context).colorScheme.onPrimary  ,
+          hoverColor: Theme.of(context).colorScheme.onPrimaryContainer  ,
           title: Text(
             note.title,
             style: Theme.of(context).textTheme.titleMedium,

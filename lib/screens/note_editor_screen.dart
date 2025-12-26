@@ -98,7 +98,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEditing ? 'Edit note' : 'New note'),
+        title: Text(isEditing ? 'Edit note' : 'New note', ),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
