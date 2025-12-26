@@ -4,48 +4,36 @@ import 'package:provider/provider.dart';
 import 'package:menouts/core/locale/app_locale.dart';
 import 'package:menouts/core/locale/locale_provider.dart';
 import 'package:menouts/core/notes/notes_provider.dart';
-import 'package:menouts/core/theme/theme_provider.dart';
 import 'package:menouts/widgets/empty_state.dart';
 import 'package:menouts/widgets/notes_list.dart';
 import 'package:menouts/screens/note_editor_screen.dart';
 
-class NotesHomeScreen extends StatelessWidget {
-  const NotesHomeScreen({super.key});
+import 'package:menouts/widgets/drawe_menu.dart';
 
+class NotesHomeScreen extends StatelessWidget {
+  const NotesHomeScreen({super.key});// Este es el constructor
+  // El método build es donde se construye la interfaz de usuario
   @override
   Widget build(BuildContext context) {
-    final themeProvider = context.read<ThemeProvider>();
+    // Accedemos a los proveedores necesarios
+    // 
     final locale = context.watch<LocaleProvider>().locale;
     final texts = AppLocale(locale.languageCode);
     final notesProvider = context.watch<NotesProvider>();
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Text(texts.title),
         actions: [
           IconButton(
-            icon: const Icon(Icons.brightness_6),
-            onPressed: (){
-              themeProvider.toggleTheme();
-            }, 
-          ),
-          IconButton(
-            icon: const Icon(Icons.language),
-            onPressed: () {
-              context.read<LocaleProvider>().toggleLocale();
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings),
+            icon: const Icon(Icons.search),
             onPressed: () {
               //context.read<LocaleProvider>().toggleLocale();
             },
           ),
         ],
       ),
-      //body: Center(
-      //  child: Text(texts.empty, style: Theme.of(context).textTheme.headlineSmall,),
-      //),
       body: notesProvider.isEmpty
         ? EmptyState(text: texts.empty)
         : NotesList(notes : notesProvider.notes),
@@ -60,6 +48,7 @@ class NotesHomeScreen extends StatelessWidget {
         },
         child: const Icon(Icons.add),
       ),
+      drawer: const DrawerMenu(),
     );
   }
 }
