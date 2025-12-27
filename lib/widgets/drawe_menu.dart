@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:menouts/screens/notes_home_screen.dart';
 
 import 'package:menouts/screens/profile_screen.dart';
 import 'package:menouts/screens/settings_screen.dart';
 
+import 'package:menouts/core/locale/app_locale.dart';
+import 'package:menouts/core/locale/locale_provider.dart';
+
+
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+
+    final locale = context.watch<LocaleProvider>().locale;
+    final texts = AppLocale(locale.languageCode);
+
     return Drawer(
       width: MediaQuery.of(context).size.width * 0.85,
       child: ListView(
@@ -19,7 +29,7 @@ class DrawerMenu extends StatelessWidget {
               color: Theme.of(context).appBarTheme.backgroundColor,
             ),
             child: Text(
-              'MeNouts',
+              texts.title,
               style: TextStyle(
                 color: Theme.of(context).appBarTheme.foregroundColor,
                 fontSize: 24,
@@ -28,7 +38,7 @@ class DrawerMenu extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text('Inicio'),
+            title: Text(texts.home),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -39,9 +49,10 @@ class DrawerMenu extends StatelessWidget {
               );
             },
           ),
+          /*
           ListTile(
             leading: const Icon(Icons.person),
-            title: const Text('Perfil'),
+            title: Text(texts.profile),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -52,9 +63,10 @@ class DrawerMenu extends StatelessWidget {
               );
             },
           ),
+          */ // Este es el perfil, lo comento por ahora a futureishon
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Ajustes'),
+            title: Text(texts.setting),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -68,7 +80,7 @@ class DrawerMenu extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 200),
             child: Text(  
-              'v1.0.0',
+              texts.version,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Theme.of(context).textTheme.bodyMedium?.color,

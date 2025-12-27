@@ -21,16 +21,18 @@ class NotesProvider extends ChangeNotifier{
     _box.put(note.id, note.toMap());
     notifyListeners();
   }
-  //Mostrar Nota
+
   //Actualizar Nota
   void updateNote(Note updateNota){
     _box.put(updateNota.id, updateNota.toMap());
     notifyListeners();
   }
   
+  //Borrar Nota
   void deleteNote(String id) {
     _box.delete(id);
     notifyListeners();
   }
-  //Borrar Nota
+  
+  
 }
