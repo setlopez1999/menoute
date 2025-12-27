@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:menouts/screens/notes_home_screen.dart';
 
-import 'package:menouts/screens/profile_screen.dart';
+//import 'package:menouts/screens/profile_screen.dart';
 import 'package:menouts/screens/settings_screen.dart';
 
 import 'package:menouts/core/locale/app_locale.dart';

@@ -1,16 +1,44 @@
-# menouts
+# Menouts 📝
 
-A new Flutter project.
+Menouts es una aplicación de notas simple, rápida y offline-first, desarrollada en **Flutter**.  
+Permite crear, editar y gestionar notas localmente, con opción de **exportar e importar backups en formato JSON**.
 
-## Getting Started
+## ✨ Características
 
-This project is a starting point for a Flutter application.
+- 🗒️ Crear, editar y eliminar notas
+- 💾 Almacenamiento local con Hive
+- 📦 Exportar notas a archivo JSON
+- 📥 Importar notas desde un backup JSON
+- ☁️ Compatible con Google Drive (vía sistema de compartir)
+- 🚫 Sin cuentas, sin login, sin backend
+- ⚡ Rápida y ligera
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Tecnologías
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- Dart
+- Hive (local storage)
+- path_provider
+- share_plus
+- file_picker
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📦 Exportar / Importar
+
+- **Exportar**: genera un archivo `menouts_backup.json` que puedes guardar en Drive u otro destino.
+- **Importar**: selecciona un archivo JSON previamente exportado y restaura tus notas.
+
+## 📱 Plataformas
+
+- ✅ Android
+- 🚧 Web Extension (planeado)
+- ❌ iOS (no soportado por ahora)
+
+## 🚀 Instalación
+
+Descarga el APK desde la sección **Releases**:
+
+👉 https://github.com/setlopez1999/menoute/releases
+
+## 📄 Licencia (no tengo xd)
+
+MIT License.
