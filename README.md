@@ -39,6 +39,6 @@ Descarga el APK desde la sección **Releases**:
 
 👉 https://github.com/setlopez1999/menoute/releases
 
-## 📄 Licencia (no tengo xd)
+## 📄 Licencia
 
-MIT License.
+This project is licensed under the MIT License.
